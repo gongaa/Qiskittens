@@ -154,7 +154,7 @@ from tqdm import tqdm
 import itertools
 
 THREADS = 8
-MINIMZATIONS = 128  # total minimzations to try
+MINIMIZATIONS = 128  # total minimzations to try
 LAYOUTS = 128  # per permutation
 
 
@@ -176,7 +176,7 @@ def find_opt(unused):
 pool_obj = mp.Pool(processes=THREADS)
     
 # Dispatch a bunch of minimzations in parallel
-min_result = list(tqdm(pool_obj.imap(find_opt, list(range(MINIMZATIONS))), total=128))
+min_result = list(tqdm(pool_obj.imap(find_opt, list(range(MINIMIZATIONS))), total=MINIMIZATIONS))
 
 # Get the minimum fev count
 minfev = 1e6
